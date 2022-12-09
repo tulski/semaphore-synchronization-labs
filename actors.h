@@ -3,7 +3,6 @@
 
 #include <thread>
 #include "buffer.h"
-#include "color_log.h"
 #include "repository.h"
 
 void Producer(int id, int insertCount, Buffer &buffer) {

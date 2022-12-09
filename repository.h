@@ -3,13 +3,19 @@
 
 #include <iomanip>
 #include <sstream>
+#include <iostream>
 #include "buffer.h"
-#include "color_log.h"
 
 Buffer wheel_buffer("wheel_buffer", 100, 4, Queue::QueueType::LIFO);
 Buffer body_buffer("body_buffer", 10, 1, Queue::QueueType::LIFO);
 Buffer glass_buffer("glass_buffer", 400, 6, Queue::QueueType::FIFO);
 Buffer pedal_buffer("pedal_buffer", 600, 3, Queue::QueueType::FIFO);
+
+enum Color {
+    RED = 31,
+    GREEN = 32,
+    WHITE = 37
+};
 
 void log_debug(Color color, std::string message) {
     std::stringstream ss;
